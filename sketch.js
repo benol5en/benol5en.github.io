@@ -11,8 +11,8 @@ function setup() {
   for (let i = 0; i < 20; i++) {
     let q = random(windowWidth);
     let a = random(windowHeight);
-    let p = random(0,100);
-    let o = random(0,100);
+    let p = random(0,50);
+    let o = random(0,50);
   shiparray[i] = new Ship(a,q,p,o);
   }
 }
