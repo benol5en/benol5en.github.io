@@ -1,18 +1,33 @@
-<!DOCTYPE html>
+var shiparray = [];
+var canvas;
 
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>GitHuBen</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 
-<p>Welcome to GitHuBen</p>
+function setup() {
+  canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0, 0);
+}
 
-</body>
-</html>
+function keyPressed() {
+  clear();
+}
+
+function mousePressed() {
+  let h = random(1,50);
+  let w = random(1,50);
+  let pressed = new Ship(mouseX, mouseY, w,h);  
+    shiparray.push(pressed);
+}
+
+function draw() {
+
+//  for (shiparray = 0, shiparray < shiparray.length, shiparray++) {
+  for (let ships of shiparray){
+  ships.move();
+  ships.show();
+  }
+}
+v
