@@ -5,15 +5,22 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
+  for (let i = 0; i < 20; i++) {
+    let q = random(windowWidth);
+    let a = random(windowHeight);
+    let p = random(0,100);
+    let o = random(0,100);
+  shiparray[i] = new Ship(a,q,p,o);
+  }
 }
+  
 
-function keyPressed() {
-  clear();
-}
+//function keyPressed() {
+//  clear();
+//}
 
 function mousePressed() {
   let h = random(1,50);
@@ -23,11 +30,9 @@ function mousePressed() {
 }
 
 function draw() {
-
-//  for (shiparray = 0, shiparray < shiparray.length, shiparray++) {
+//  for (let i = 0; i < shiparray.length; i++) {
   for (let ships of shiparray){
   ships.move();
   ships.show();
   }
 }
-v
